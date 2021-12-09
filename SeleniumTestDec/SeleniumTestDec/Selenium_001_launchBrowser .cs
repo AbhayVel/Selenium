@@ -20,6 +20,7 @@ namespace SeleniumTestDec
             driver.Quit();
             driver.Dispose();
         }
+
         [Test]
         public void Test1()
         {

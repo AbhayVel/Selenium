@@ -19,6 +19,8 @@ namespace com.refer
 		{
 			driver = new ChromeDriver();
 			driver.Manage().Window.Maximize();
+			driver.Navigate().GoToUrl("https://opensource-demo.orangehrmlive.com/");
+
 		}
 
 
@@ -41,6 +43,7 @@ namespace com.refer
 			e.SendKeys("admin123");
 			e = driver.FindElement(By.Name("Submit"));
 			e.Click();
+			
 
 		}
 
@@ -49,14 +52,36 @@ namespace com.refer
 		[Order(2)]
 		public  void movemouse()
 		{
-			IWebElement e = driver.FindElement(By.XPath("//*[@id='menu_admin_Job']"));
-			Actions act = new Actions(driver);
+            try
+            {
+				Thread.Sleep(2000);
+				Actions act = new Actions(driver);
+				Thread.Sleep(2000);
+				IWebElement admin = driver.FindElement(By.XPath("//*[@id='menu_admin_viewAdminModule']"));
 
-			act.MoveToElement(e).Build().Perform();
-			act.Click();
-			e = driver.FindElement(By.LinkText("Job Titles"));
-			act.MoveToElement(e).Build().Perform();
-			e.Click();
+				act.MoveToElement(admin).Build().Perform();
+				Thread.Sleep(1000);
+					
+
+				IWebElement e = driver.FindElement(By.XPath("//*[@id='menu_admin_Job']"));
+
+				Thread.Sleep(2000);
+
+				act.MoveToElement(e).Build().Perform();
+				act.Click();
+				Thread.Sleep(5000);
+				e = driver.FindElement(By.LinkText("Job Titles"));
+				act.MoveToElement(e).Build().Perform();
+				Thread.Sleep(5000);
+				e.Click();
+
+				Thread.Sleep(5000);
+			}
+			catch(Exception ex)
+            {
+
+            }
+			
 
 
 		}

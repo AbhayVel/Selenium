@@ -26,14 +26,16 @@ namespace SeleniumTestDec
         }
 
         [Test]
-        public void launchBrowser()
+        [Order(1)]
+        public void LaunchBrowser()
         {
             driver.Navigate().GoToUrl("https://opensource-demo.orangehrmlive.com/");
          
         }
 
         [Test]
-        public void verifyTitle()
+        [Order(2)]
+        public void VerifyTitle()
         {
             IWebElement e = driver.FindElement(By.XPath("//*[@id='logInPanelHeading']"));
 

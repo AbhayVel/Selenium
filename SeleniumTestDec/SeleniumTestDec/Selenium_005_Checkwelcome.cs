@@ -18,6 +18,15 @@ namespace SeleniumTestDec
         }
 
 
+        [OneTimeTearDown]
+        public void TestEnd()
+        {
+            driver.Close();
+            driver.Quit();
+            driver.Dispose();
+        }
+
+
         [Test]
         public void launchBrowser()
         {
@@ -57,7 +66,7 @@ namespace SeleniumTestDec
                 Console.WriteLine("Error: Welcome Admin Text is not available");
             }
 
-            Assert.AreEqual("welcome Admin", welcome, "Error: Welcome Admin Text is not available");
+            Assert.AreEqual("Welcome Admin", welcome, "Error: Welcome Admin Text is not available");
         }
     }
 }

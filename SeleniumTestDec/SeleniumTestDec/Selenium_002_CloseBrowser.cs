@@ -11,13 +11,22 @@ namespace SeleniumTestDec
         {
         }
 
+        //[OneTimeTearDown]
+        //public void TestEnd()
+        //{
+        //    driver.Close();
+        //    driver.Quit();
+        //    driver.Dispose();
+        //}
 
         [Test]
         public void closebrowser()
         {
          WebDriver driver = new ChromeDriver();
-            driver.Navigate().GoToUrl("https://opensource-demo.orangehrmlive.com/");
+          driver.Navigate().GoToUrl("https://opensource-demo.orangehrmlive.com/");
             driver.Close();
+            driver.Quit();
+            driver.Dispose();
         }
     }
 }

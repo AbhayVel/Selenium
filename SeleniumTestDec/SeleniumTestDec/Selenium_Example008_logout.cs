@@ -25,6 +25,7 @@ namespace com.refer
 		}
 
 		[Test]
+		[Order(1)]
 		public  void login()
 		{
 			
@@ -39,12 +40,13 @@ namespace com.refer
 
 
 		[Test]
+		[Order(2)]
 		public  void logout()
 		{
 			IWebElement e = driver.FindElement(By.XPath("//*[@id='welcome']"));
 			e.Click();
 
-			 e = driver.FindElement(By.XPath("//*[@id='welcome-menu']/ul/li[3]/a"));
+			e = driver.FindElement(By.XPath("//*[@id='welcome-menu']/ul/li[3]/a"));
 			e.Click();
 		}
 	}
