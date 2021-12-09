@@ -3,6 +3,9 @@ bin-debug/
 bin-release/
 [Oo]bj/
 [Bb]in/
+*.dll
+*.pdb
+.vs
 
 # Other files and folders
 .settings/

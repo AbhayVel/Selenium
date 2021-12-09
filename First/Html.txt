@@ -1,0 +1,41 @@
+1. ID 
+2. TagName+Property/Attribute  
+3. TagName+CLassName 
+4. TagName+CLassName+Property
+5. Property/ClassName XXXXXXXXXXXXXXXXXX
+6. Relation avoid <--
+
+
+HTML
+
+ELEMENT->Tagname 
+Attribute/Property ->Attribute/Property
+Text -> Text
+Value-> Value 
+
+
+<------------XX----->
+
+class is a special type of attribute. 
+We always say this class only. 
+value of this attribute is consider as classes 
+class="col-md-6 offset-md-3 mt-5"
+1. col-md-6 
+2. offset-md-3 
+3. mt-5
+
+class="entry-content"
+
+1. entrycontent
+
+class="containeroneTwo  autoeam a b c"
+1. containeroneTwo 
+2. autoeam
+3. a 
+4. b 
+5. c
+<---------XXX-------->
+
+
+id is a special type of attribute. 
+We always say this Id only. 

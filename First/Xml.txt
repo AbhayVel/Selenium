@@ -1,0 +1,55 @@
+<X   d="abhay"   placeholder="aaa" >  
+	<A>
+		<zsasa>
+			<name>
+				Abhay 
+			</name>
+			<name>
+				Aja
+			</name>
+			<name>
+				Ajay
+			</name>
+		</zsasa>
+		
+		<zsasa>
+			<name>
+				Sajag
+			</name>
+			<name>
+				Sajag2
+			</name>
+			<name>
+				Sajag 3
+			</name>
+		</zsasa>
+	</A>
+	<B>
+	</B>
+</X>
+
+
+/X
+/X/A 
+/X/A/zsasa
+/X/A/zsasa/name 
+/X/B
+
+
+
+-----------------------
+
+
+X<--Element 
+A <--Element + It is child Element of xml Eml
+zsasa<-- Element + It is child element of A
+
+
+d<-- Attribute/Property of X Element 
+placeholder<--Attribute/Property of X Element 
+
+abc<-- Value Of d attribute/property.
+aaa<--Value of placeholder attribute/. 
+
+Abhay <-- Text of name element 
+
