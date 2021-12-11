@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
+using System.Threading;
 
 namespace com.refer
 {
@@ -18,6 +19,7 @@ namespace com.refer
 
 
 		[Test]
+		[Order(1)]
 		public void launchBrowser()
 		{
 
@@ -26,7 +28,8 @@ namespace com.refer
 		}
 
 		[Test]
-		public void countryDropdown()
+		[Order(2)]
+		public void country_Dropdown()
 		{
 			SelectElement noOfEmployees = new SelectElement(driver.FindElement(By.Name("NoOfEmployees")));
 			
@@ -34,6 +37,7 @@ namespace com.refer
 
 			SelectElement noOfCountries = new SelectElement(driver.FindElement(By.Name("Country")));
 			noOfCountries.SelectByText("Austria");
+			Thread.Sleep(8000);
 		}
 
 	}

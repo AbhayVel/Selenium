@@ -5,8 +5,8 @@
 
 	Index,
 		Value,
-		Text
-		
+		VisibleText
+
 	}
 
 }

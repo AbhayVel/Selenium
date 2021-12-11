@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
+using System.Threading;
 
 namespace com.refer
 {
@@ -30,11 +31,15 @@ namespace com.refer
 
 
 		[Test]
+		[Order(1)]
 		public void launchBrowser()
 		{
 			driver.Navigate().GoToUrl("https://opensource-demo.orangehrmlive.com/");
 
 		}
+
+		[Test]
+		[Order(2)]
 		public void orangelogin()
 
 		{
@@ -52,14 +57,18 @@ namespace com.refer
 
 		}
 
+		[Test]
+		[Order(3)]
 		public void check()
 		{
-
+			driver.Navigate().GoToUrl("https://opensource-demo.orangehrmlive.com/index.php/admin/viewSystemUsers");
+			//
+			Thread.Sleep(4000);
 			IWebElement e = driver.FindElement(By.XPath("//*[@id='ohrmList_chkSelectAll']"));
 
 			for (int i = 0; i < 2; i++)
 			{
-
+				Thread.Sleep(8000);
 				if (!e.Selected)
 				{
 
@@ -74,6 +83,8 @@ namespace com.refer
 
 				}
 			}
+
+			Thread.Sleep(8000);
 
 		}
 	}

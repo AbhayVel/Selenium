@@ -25,7 +25,7 @@ namespace com.refer
 		}
 
 		[Test]
-		public void Test(string[] args)
+		public void Test()
 		{
 			
 

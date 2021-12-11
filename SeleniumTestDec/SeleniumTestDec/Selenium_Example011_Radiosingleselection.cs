@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using System.Threading;
 
 namespace com.refer
 {
@@ -43,9 +44,11 @@ namespace com.refer
 		  IJavaScriptExecutor js = (IJavaScriptExecutor) driver;
 		  js.ExecuteScript("window.scrollBy(0,1000)");
 		IWebElement radioElement = driver.FindElement(By.Id("radio2"));
+			Thread.Sleep(5000);
 
+			radioElement.Click();
 
-		radioElement.Click();
+			Thread.Sleep(5000);
 	}
 	}
 

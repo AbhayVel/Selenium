@@ -4,6 +4,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace com.refer
 {
@@ -22,6 +23,7 @@ namespace com.refer
 
 
 		[Test]
+		[Order(1)]
 		public void launchBrowser()
 		{
 
@@ -29,12 +31,13 @@ namespace com.refer
 
 		}
 
-
+		[Test]
+		[Order(2)]
 		public void countryDropdown()
 		{
 
 
-			IWebElement countries = driver.FindElement(By.Id("input-country"));
+			IWebElement countries = driver.FindElement(By.Id("Form_submitForm_Country"));
 			SelectElement se = new SelectElement(countries);
 			IList<IWebElement> allCountries = se.Options;
 
@@ -44,13 +47,15 @@ namespace com.refer
 
 			foreach (IWebElement countriesList in allCountries)
 			{
-				if (countriesList.Text.Equals("Cuba"))
+				if (countriesList.Text.Contains("Ca"))
 				{
 
 					countriesList.Click();
 					break;
 				}
 			}
+
+			Thread.Sleep(8000);
 
 		}
 

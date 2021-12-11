@@ -4,6 +4,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace com.refer
 {
@@ -40,7 +41,9 @@ namespace com.refer
 			SelectElement selec = new SelectElement(e);
 			 
 			selec.SelectByText("Apple");
+			Thread.Sleep(1000);
 			selec.SelectByIndex(2);
+			Thread.Sleep(1000);
 			selec.DeselectByIndex(1);
 			IList<IWebElement> options = selec.AllSelectedOptions;
 			for (int i = 0; i < options.Count; i++)
@@ -48,7 +51,7 @@ namespace com.refer
 				Console.WriteLine("text is :" + options[i].Text);
 				Console.WriteLine("value is :" + options[i].GetAttribute("value"));
 			}
-
+			Thread.Sleep(8000);
 		}
 
 	}

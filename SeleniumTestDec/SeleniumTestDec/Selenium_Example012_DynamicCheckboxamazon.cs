@@ -38,23 +38,39 @@ namespace com.refer
 
 		}
 		[Test]
-		public void verifycheckbox(string displayText)
+		[TestCase("Get It in 2 Days", "Get It by Tomorrow")]
+		//[TestCase("Get It by Tomorrow")]
+		public void verifycheckbox(string displayText, string displayText2)
 		{
 
 			IWebElement searchbox = driver.FindElement(By.Id("twotabsearchtextbox"));
-				searchbox.SendKeys("Mobiles");
-			IWebElement checkbox = driver.FindElement(By.XPath("//li[@aria-label='" + displayText + "']//input"));
+				searchbox.SendKeys("Mobiles" );
 
-			IWebElement checkboxi = checkbox.FindElement(By.XPath("//li[@aria-label='" + displayText + "']//i"));
+			IWebElement searchbutton= driver.FindElement(By.Id("nav-search-submit-button"));
+			searchbutton.Click();
+			Thread.Sleep(1000);
+			IWebElement checkbox = driver.FindElement(By.XPath("(//li[@aria-label='" + displayText + "'])//input"));
+			Thread.Sleep(3000);
+			IWebElement checkboxi = driver.FindElement(By.XPath("(//li[@aria-label='" + displayText + "'])//i"));
+			checkboxi.Click();
+			Thread.Sleep(7000);
+			IWebElement checkboxi2 = driver.FindElement(By.XPath("(//li[@aria-label='" + displayText2 + "'])//i"));
+			checkboxi2.Click();
 
-			bool state = checkboxi.Selected;
 
+			Thread.Sleep(7000);
+			checkboxi2 = driver.FindElement(By.XPath("(//li[@aria-label='" + displayText2 + "'])//i"));
+			bool state = checkboxi2.Selected;
+
+			Assert.IsTrue(!state, "Display text is selected");
 			Console.WriteLine("Checkbox is not checked" + " : " + state);
 			if (!state)
 			{
-				checkboxi.Click();
+				//checkboxi.Click();
 
 			}
+
+			Thread.Sleep(3000);
 		}
 	
 

@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using System;
+using System.Threading;
 
 namespace com.refer
 {
@@ -12,6 +13,8 @@ namespace com.refer
 		WebDriver driver;
 		By country = By.Name("Country");
 		By employees = By.Name("NoOfEmployees");
+
+
 		[OneTimeSetUp]
 		public void Setup()
 		{
@@ -26,20 +29,22 @@ namespace com.refer
 		{
 			driver.Navigate().GoToUrl("https://www.orangehrm.com/contact-sales/");
 
-            By employees = null;
+             
             selectOptionFromDropdown(employees, DropDown.Index.ToString(),"2");
-			selectOptionFromDropdown(employees, DropDown.Text.ToString(),"51 - 75");
+			Thread.Sleep(8000);
+			selectOptionFromDropdown(employees, DropDown.VisibleText.ToString(),"51 - 75");
+			Thread.Sleep(8000);
 			selectOptionFromDropdown(country, DropDown.Value.ToString(),"Bahrain");
-
+			Thread.Sleep(8000);
 		}
 
 
 
-		[Test]
-		public static void selectOptionFromDropdown(By locator, string type, string value)
+ 
+		public void selectOptionFromDropdown(By locator, string type, string value)
 		{
 
-			SelectElement se = new SelectElement((IWebElement)locator);
+			SelectElement se = new SelectElement((IWebElement)driver.FindElement(locator));
 
 
 			switch (type)
