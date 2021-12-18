@@ -53,7 +53,7 @@ namespace com.refer
 			public  void fileUpload()
 			{
 				IWebElement obj = driver.FindElement(By.XPath("//input[@id='photofile']"));
-				obj.SendKeys("D:\\Amruta\\AmrutaSelenium_Examples\\TextFile.txt");
+				obj.SendKeys("D:\\TextFile.txt");
 			}
 
 

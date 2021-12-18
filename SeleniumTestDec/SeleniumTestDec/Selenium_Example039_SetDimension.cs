@@ -21,6 +21,7 @@ namespace com.refer
 			var size = driver.Manage().Window.Size;
 			size.Width = 480;
 			size.Height = 900;
+			driver.Manage().Window.Size = size;
 			Console.WriteLine(driver.Manage().Window.Size);
 		}
 

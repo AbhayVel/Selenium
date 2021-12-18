@@ -9,7 +9,7 @@ namespace com.refer
 {
 
 
-    public class Selenium_Example018_checkonlinkusingsimplefor_TextCheck
+    public class Selenium_Example018_checkonlinkusingsimplefor
     {
 
         WebDriver driver;
@@ -51,24 +51,20 @@ namespace com.refer
 
                 for (int j = 0; j < columns.Count; j++)
                 {
-                    IWebElement cell = columns[j];
-                    try
+
+                    if (i == 3 && j == 1)
                     {
+
+                        IWebElement cell = columns[j];
+
                         IWebElement link = cell.FindElement(By.TagName("a"));
-                        if ("Aravind".Contains(link.Text, StringComparison.OrdinalIgnoreCase))
-                        {
 
-                            link.Click();
+                        link.Click();
 
-                            i = rows.Count;
-                            break;
-
-                        }
-                    }catch(Exception ex)
-                    {
+                        i = rows.Count;
+                        break;
 
                     }
-                   
 
 
 

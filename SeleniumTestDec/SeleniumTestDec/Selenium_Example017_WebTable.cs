@@ -13,8 +13,12 @@ namespace com.refer
 	{
 	  WebDriver driver;
 
+		 
+
 		[Test]
-		public void Test(string[] args)
+		[Order(1)]
+
+		public void Test()
 		{
 
 

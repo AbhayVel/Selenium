@@ -25,7 +25,8 @@ namespace com.refer
 		public void launchBrowser()
 		{
 			driver.Navigate().GoToUrl("https://opensource-demo.orangehrmlive.com/index.php/pim/addEmployee");
-
+			login();
+			GrabScreenShot();
 		}
 
 

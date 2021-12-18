@@ -19,12 +19,12 @@ namespace com.refer
 		public  void Main()
 		{
 
-			string path = "D:\\Amruta\\ReferenceCode\\ReferenceCode\\src\\test\\java\\com\\utility\\login.properties";
+			string path = @"D:\selenium\Selenium\login.properties";
 			// This example will give you idea about File handling with properties 
 			FileStream fs = null;
 			try
 			{
-				fs = new FileStream(path, FileMode.Open, FileAccess.Read);
+				fs = new FileStream(path, FileMode.Open, FileAccess.ReadWrite);
 			}
 			catch (FileNotFoundException e1)
 			{

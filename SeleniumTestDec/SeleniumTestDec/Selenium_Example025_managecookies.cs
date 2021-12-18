@@ -24,6 +24,7 @@ namespace com.refer
 		public void launchBrowser()
 		{
 			driver.Navigate().GoToUrl("https://demo.nopcommerce.com/");
+			Setcookies();
 
 		}
 
@@ -38,7 +39,7 @@ namespace com.refer
 			var cookies = driver.Manage().Cookies.AllCookies;
 			// delete a cookie with name 'test1'	
 			driver.Manage().Cookies.DeleteCookieNamed("test1");
-
+			driver.Manage().Cookies.DeleteAllCookies();
 
 		}
 	}

@@ -21,6 +21,7 @@ namespace com.refer
 		}
 
 		[Test]
+		[Order(2)]
 		public  void getAllLinks( )
 		{
 
@@ -31,7 +32,8 @@ namespace com.refer
 			}
 
 		}
-
+		[Test]
+		[Order(1)]
 		public  void login(WebDriver driver)
 		{
 			IWebElement e = driver.FindElement(By.Id("txtUsername"));
