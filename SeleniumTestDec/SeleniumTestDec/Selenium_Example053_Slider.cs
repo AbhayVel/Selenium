@@ -10,9 +10,7 @@ namespace com.refer
 
 
 	public class Selenium_Example053_Slider
-	{
-		public class login
-		{
+	{ 
 
 			WebDriver driver;
 
@@ -21,34 +19,33 @@ namespace com.refer
 			{
 				driver = new ChromeDriver();
 				driver.Manage().Window.Maximize();
-			}
+			driver.Navigate().GoToUrl("http://jqueryui.com/slider/");
+		}
 
 
-			[Test]
-			public void launchBrowser()
+			
+		[Test]
+			public void sliderTest()
 			{
-				driver.Navigate().GoToUrl("http://jqueryui.com/slider/");
-
-			}
-			public void slider1()
-			{
-				driver.SwitchTo().Frame(0);
-				IWebElement slider = driver.FindElement(By.XPath("//*[@id='slider']/span"));
+		IWebElement frame1 =	driver.FindElement(By.ClassName("demo-frame"));
+				driver.SwitchTo().Frame(frame1);
+			Thread.Sleep(3000);
+			IWebElement slider = driver.FindElement(By.Id("slider"));
 
 
 
-				//Using Action Class
 
+			Actions move = new Actions(driver);
 
-				Actions move = new Actions(driver);
-
-				move.DragAndDropToOffset(slider, 10, 300).Build().Perform();
-
-
+            move.DragAndDropToOffset(slider, 10,60).Build().Perform(); ;
+            //move.ClickAndHold(slider);
+            //move.MoveByOffset(10, 60);
+            //move.Release(slider).Build().Perform();
+            Thread.Sleep(6000);
 
 			}
 		}
-	}
+	 
 
 
 

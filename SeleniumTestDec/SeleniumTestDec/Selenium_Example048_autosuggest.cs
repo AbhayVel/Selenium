@@ -19,11 +19,13 @@ namespace com.refer
 
 			driver.Navigate().GoToUrl("http://jqueryui.com/autocomplete/");
 			driver.Manage().Window.Maximize();
-			driver.SwitchTo().Frame(0);
+			IWebElement frame1 = driver.FindElement(By.ClassName("demo-frame"));
+			driver.SwitchTo().Frame(frame1);
+			Thread.Sleep(3000);
 		}
 
 
-
+		[Test]
 		public void keyup()
 		{
 

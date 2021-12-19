@@ -39,8 +39,6 @@ namespace com.refer
                     if (ce != null)
                     {
 
-
-
                         //string str = ce.getStringCellValue();
                         string str = ce.StringCellValue;
 

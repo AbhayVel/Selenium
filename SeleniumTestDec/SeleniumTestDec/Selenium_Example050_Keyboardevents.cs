@@ -4,6 +4,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace com.refer
 {
@@ -18,9 +19,12 @@ namespace com.refer
 		{
 			driver = new ChromeDriver();
 
-			driver.Navigate().GoToUrl("http://www.google.com");
+			driver.Navigate().GoToUrl("http://jqueryui.com/autocomplete/");
 			driver.Manage().Window.Maximize();
-			driver.SwitchTo().Frame(0);
+			IWebElement frame1 = driver.FindElement(By.ClassName("demo-frame"));
+			driver.SwitchTo().Frame(frame1);
+			Thread.Sleep(3000);
+
 		}
 
 	
@@ -28,14 +32,17 @@ namespace com.refer
 		[Test]
 		public  void clickHold( )
 		{
+			IWebElement tags = driver.FindElement(By.XPath("//input[@class='ui-autocomplete-input']"));
+			tags.SendKeys("c");
+
 			Actions act = new Actions(driver);
-			act.KeyDown(Keys.Control);
-			IList<IWebElement> L = (IList<IWebElement>)driver.FindElement(By.CssSelector("ol#selectable"));
-			Console.WriteLine(L.Count);
-			act.Click(L[3]);
-			act.Click(L[4]);
-			act.KeyUp(Keys.Control);
+			act.KeyDown(Keys.ArrowDown);
 			act.Build().Perform();
+			 
+			Thread.Sleep(2000);
+			 
+
+			Thread.Sleep(2000);
 		}
 
 	}

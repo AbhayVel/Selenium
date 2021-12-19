@@ -14,7 +14,7 @@ namespace com.refer
 	{
 
 		[Test]
-			public  void Main(string[] args)
+			public  void Main()
 			{
 
 
@@ -65,7 +65,7 @@ namespace com.refer
 							Console.Write(cell.StringCellValue + "\t");
 						break;
 						case CellType.Numeric:
-							Console.Write(cell.NumericCellValue + "\t");
+							Console.Write(cell.NumericCellValue  + "\t");
 							break;
 						case CellType.Boolean:
 							Console.Write(cell.BooleanCellValue + "\t");

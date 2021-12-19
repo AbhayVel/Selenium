@@ -29,13 +29,13 @@ namespace com.refer
 			String parentWindowHandle = driver.CurrentWindowHandle;
 			Console.WriteLine("Parent window's handle -> " + parentWindowHandle);
 
-			IWebElement clickElement = driver.FindElement(By.Id("button1"));
-			//I am using 'for' loop to get multiple windows by clicking the element
-			for (var i = 0; i < 3; i++)
-			{
-				clickElement.Click();
-				Thread.Sleep(3000);
-			}
+			//IWebElement clickElement = driver.FindElement(By.Id("button1"));
+			////I am using 'for' loop to get multiple windows by clicking the element
+			//for (var i = 0; i < 3; i++)
+			//{
+			//	clickElement.Click();
+			//	Thread.Sleep(3000);
+			//}
 
 			
 
@@ -62,7 +62,7 @@ namespace com.refer
 			//at this point there is no focused window, we have to explicitly switch back to some window.
 			driver.SwitchTo().Window(lastWindowHandle);
 
-			driver.Url = "https://naukri.co.in";
+			driver.Navigate().GoToUrl( "https://naukri.co.in");
 		}
 	}
 

@@ -39,6 +39,8 @@ namespace com.refer
 			Properties p = new Properties();
 			try
 			{
+				System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+
 				p.Load(fs);
 				Console.WriteLine("hi");
 			}

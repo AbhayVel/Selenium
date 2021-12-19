@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using System;
+using System.Threading;
 
 namespace com.refer
 {
@@ -27,12 +28,16 @@ namespace com.refer
 		
 			
 			driver.FindElement(By.Name("proceed")).Click();
-			
+			Thread.Sleep(5000);
 			IAlert al = driver.SwitchTo().Alert();
 			Console.WriteLine(al.Text);
+			Thread.Sleep(5000);
+			
 			al.Accept(); // ok
+			Thread.Sleep(10000);
 			// al.dismiss();// cancel
 			driver.SwitchTo().DefaultContent();
+			Thread.Sleep(10000);
 		}
 
 	}

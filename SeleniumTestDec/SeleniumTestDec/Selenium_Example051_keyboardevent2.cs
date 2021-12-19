@@ -21,15 +21,17 @@ namespace com.refer
 		}
 
 
-	
+	[Test]
 		public void keyboarevent()
 		{
 
 			IWebElement e = driver.FindElement(By.LinkText("Gmail"));
 			Actions act = new Actions(driver);
-			act.MoveToElement(e);
-			act.ContextClick(e).SendKeys(Keys.ArrowDown).SendKeys(Keys.Enter).Build().Perform();
 
+			act.MoveToElement(e);
+			Thread.Sleep(2000);
+			act.ContextClick(e).SendKeys(Keys.ArrowDown).SendKeys(Keys.Enter).Build().Perform();
+			Thread.Sleep(10000);
 		}
 		
 

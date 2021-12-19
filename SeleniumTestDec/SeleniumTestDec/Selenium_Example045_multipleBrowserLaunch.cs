@@ -6,27 +6,24 @@ using System;
 
 namespace com.refer
 {
-	public class Selenium_Example045_multipleBrowserLaunch
-	{
-
-        [TestFixture(typeof(FirefoxDriver))]
+	 
         [TestFixture(typeof(ChromeDriver))]
         public class SkillTest<TWebDriver> where TWebDriver : IWebDriver, new()
         {
             private IWebDriver driver;
-            private string driverPath;
+           // private string driverPath="";
 
-            [SetUp]
-            public void Init()
+            [OneTimeSetUp]
+            public void Init()  
             {
                 driver = new TWebDriver();
-                driver.Navigate().GoToUrl("https://google.com");
+                
             }
 
             [Test]
             public void your_test_case()
             {
-                
+                driver.Navigate().GoToUrl("https://google.com");
             }
 
 
@@ -40,4 +37,4 @@ namespace com.refer
 
     }
 
-}
+ 
