@@ -9,15 +9,20 @@ namespace FirstKeywordDrivenFramework
     {
         static void Main(string[] args)
         {
-            MyDriver aDriver = new MyDriver();
-            aDriver.Driver.Manage().Window.Maximize();
-            aDriver.Driver.Navigate().GoToUrl("https://opensource-demo.orangehrmlive.com/");
+            MyDriver myDriver = new MyDriver();
+            Readxlxscs rd = new Readxlxscs();
 
-            LoginPage loginPage = new LoginPage(aDriver.Driver);
+            rd.OpenExcel(@"D:\Amruta\TestData.xlsx");
+            rd.ReadSheet("sheet1");
 
-            loginPage.SetUserName("Admin");
-            loginPage.SetPassword("admin123");
-            loginPage.Submit();
+
+
+            var lstTestCases = rd.GetTestCases();
+            for (int i = 0; i < lstTestCases.Count; i++)
+            {
+                myDriver.Exceute(lstTestCases[i]);
+            }
+             
         }
     }
 }

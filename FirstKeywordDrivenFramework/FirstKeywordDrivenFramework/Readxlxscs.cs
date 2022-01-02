@@ -65,7 +65,7 @@ namespace FirstKeywordDrivenFramework
         {
             List<TestCases> testCases = new List<TestCases>();
             int rowCount = GetRowCount();
-            for (int r = 1; r < rowCount; r=r+1)
+            for (int r = 1; r <= rowCount; r=r+1)
             {
                 testCases.Add(GetTestCase(r));
             }
