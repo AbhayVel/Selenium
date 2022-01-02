@@ -6,8 +6,8 @@ using System;
 
 namespace com.refer
 {
-	 
-        [TestFixture(typeof(ChromeDriver))]
+    [TestFixture(typeof(ChromeDriver))]
+    [TestFixture(typeof(FirefoxDriver))]
         public class SkillTest<TWebDriver> where TWebDriver : IWebDriver, new()
         {
             private IWebDriver driver;
