@@ -49,6 +49,19 @@ namespace FirstKeywordDrivenFramework
         {
             return sheet.LastRowNum; 
         }
+        public TestCases GetTestCase(int rowNumber)
+        {
+            
+            IRow row = sheet.GetRow(rowNumber);
+            TestCases testcase = new TestCases();
+            testcase.TestSteps = row.GetCell(0).StringCellValue;
+            testcase.LocatorType = row.GetCell(0).StringCellValue;
+            testcase.LocatorTypeValue = row.GetCell(0).StringCellValue;
+            testcase.Action = row.GetCell(0).StringCellValue;
+            testcase.Value = row.GetCell(0).StringCellValue;
+            return testcase; 
+
+        }
         
     }
 }
