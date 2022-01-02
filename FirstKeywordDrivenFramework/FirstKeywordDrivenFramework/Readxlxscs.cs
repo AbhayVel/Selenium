@@ -50,18 +50,28 @@ namespace FirstKeywordDrivenFramework
             return sheet.LastRowNum; 
         }
         public TestCases GetTestCase(int rowNumber)
-        {
-            
+        {            
             IRow row = sheet.GetRow(rowNumber);
             TestCases testcase = new TestCases();
             testcase.TestSteps = row.GetCell(0).StringCellValue;
-            testcase.LocatorType = row.GetCell(0).StringCellValue;
-            testcase.LocatorTypeValue = row.GetCell(0).StringCellValue;
-            testcase.Action = row.GetCell(0).StringCellValue;
-            testcase.Value = row.GetCell(0).StringCellValue;
-            return testcase; 
-
+            testcase.LocatorType = row.GetCell(1).StringCellValue;
+            testcase.LocatorTypeValue = row.GetCell(2).StringCellValue;
+            testcase.Action = row.GetCell(3).StringCellValue;
+            testcase.Value = row.GetCell(4).StringCellValue;
+            return testcase;
         }
-        
+
+        public List<TestCases> GetTestCases()
+        {
+            List<TestCases> testCases = new List<TestCases>();
+            int rowCount = GetRowCount();
+            for (int r = 1; r < rowCount; r=r+1)
+            {
+                testCases.Add(GetTestCase(r));
+            }
+             
+            return testCases;
+        }
+
     }
 }
